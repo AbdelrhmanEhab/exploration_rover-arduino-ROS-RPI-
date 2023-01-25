@@ -1,0 +1,37 @@
+this project is a exporation Rover where
+the arduino mega is used to drive the motors with recived commands from teleop twist keyboard from rasberry pi using serial node also send the sensors readings from arduino to terminals in RPI
+
+motor driver used is 3X(cytron 20A motorriver)
+
+sensors mounted on the rover 2X(ultrasonic) 1X(DHT11) 
+
+also using lds lider to generate point cloud and show them using rviz on rasberry pi
+
+
+libiraries of ros(most used):
+-rosserial
+-teleop_twist_keyboard
+-hls_lfcd_lds_driver
+-rviz
+
+used command in termianl in sequance after lib being installed
+ (each in separte termianl)
+
+1-roscore 
+
+2-rosrun teleop_twist_keyboard teleop_twist_keyboard.py
+
+3-rosrun rosserial_python serial_node.py /dev/ttyACM0
+(ttyACM0 is the arduino com port on RPI)
+
+4-rostopic list (used to see the node list -you will find the data from sensors named in this list)
+
+5-rostopic echo (write the name from list to see the data recived)
+(use echo in multi-terminals to get all the data)
+
+6-roslaunch hls_lfcd_lds_driver hlds_laser.launch (to active lds lidar)
+
+7-rosrun rviz rviz (frame->change from map to laser to get the lidar frame)
+(add a laser scan then the topic in this laser scan to /scan and change the size from 0.01 to 0.04 or0.05)
+
+8- open the picam.py to open the RPI camera
