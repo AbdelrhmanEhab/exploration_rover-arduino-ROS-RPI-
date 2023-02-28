@@ -35,3 +35,6 @@ used command in termianl in sequance after lib being installed
 (add a laser scan then the topic in this laser scan to /scan and change the size from 0.01 to 0.04 or0.05)
 
 8- open the picam.py to open the RPI camera
+
+
+videos: https://www.youtube.com/playlist?list=PLLSKJazVcrHij4PRaD4u21ULl7GqWY1Sg
